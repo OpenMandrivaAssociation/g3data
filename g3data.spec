@@ -1,5 +1,5 @@
 %define name 	g3data
-%define version 1.5.0
+%define version 1.5.1
 %define release %mkrel 1
 
 Name:           %name
@@ -44,4 +44,3 @@ bzme $RPM_BUILD_ROOT/%_mandir/man1/*.gz
 
 %clean
 rm -fr $RPM_BUILD_ROOT
-
