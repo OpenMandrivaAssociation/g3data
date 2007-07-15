@@ -12,6 +12,7 @@ Summary:        Graph data extractor
 Source:		http://freshmeat.net/redir/g3data/28160/url_tgz/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	imlib-devel gtk2-devel pkgconfig
+BuildRequires:	perl-SGMLSpm
 
 %description
 g3data is used for extracting data from graphs. In publications graphs often
