@@ -1,6 +1,6 @@
 %define name 	g3data
 %define version 1.5.1
-%define release %mkrel 2
+%define release %mkrel 1
 
 Name:           %name
 Version:        %version
@@ -13,7 +13,7 @@ Source:		http://freshmeat.net/redir/g3data/28160/url_tgz/%{name}-%{version}.tar.
 Source1:	g3data-icon.png
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	imlib-devel gtk2-devel pkgconfig
-BuildRequires:	perl-SGMLSpm docbook-utils
+BuildRequires:	perl-SGMLSpm docbook-utils docbook-dtd41-sgml
 
 %description
 g3data is used for extracting data from graphs. In publications graphs often
