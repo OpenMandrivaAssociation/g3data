@@ -36,10 +36,11 @@ mkdir -p $RPM_BUILD_ROOT/%_bindir
 cp %name $RPM_BUILD_ROOT/%_bindir/
 mkdir -p $RPM_BUILD_ROOT/%_mandir/man1
 cp *.1.gz $RPM_BUILD_ROOT/%_mandir/man1/
-bzme $RPM_BUILD_ROOT/%_mandir/man1/*.gz
 
+mkdir -p %{buildroot}%{_datadir}/pixmaps
 cp %{SOURCE1} %{buildroot}%{_datadir}/pixmaps/%{name}.png
 
+mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Encoding=UTF-8
