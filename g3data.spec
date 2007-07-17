@@ -1,6 +1,6 @@
 %define name 	g3data
 %define version 1.5.1
-%define release %mkrel 1
+%define release %mkrel 2 2 
 
 Name:           %name
 Version:        %version
@@ -13,7 +13,7 @@ Source:		http://freshmeat.net/redir/g3data/28160/url_tgz/%{name}-%{version}.tar.
 Source1:	g3data-icon.png
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	imlib-devel gtk2-devel pkgconfig
-BuildRequires:	perl-SGMLSpm docbook-utils docbook-dtd41-sgml
+BuildRequires:	perl-SGMLSpm docbook-utils docbook-dtd41-sgml imagemagick
 
 %description
 g3data is used for extracting data from graphs. In publications graphs often
@@ -37,8 +37,12 @@ cp %name $RPM_BUILD_ROOT/%_bindir/
 mkdir -p $RPM_BUILD_ROOT/%_mandir/man1
 cp *.1.gz $RPM_BUILD_ROOT/%_mandir/man1/
 
-mkdir -p %{buildroot}%{_datadir}/pixmaps
-cp %{SOURCE1} %{buildroot}%{_datadir}/pixmaps/%{name}.png
+mkdir -p %{buildroot}%{_iconsdir}/hicolor/16x16/apps/
+convert -geometry 16x16 %SOURCE1 %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
+mkdir -p %{buildroot}%{_iconsdir}/hicolor/32x32/apps/
+convert -geometry 32x32 %SOURCE1 %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
+mkdir -p %{buildroot}%{_iconsdir}/hicolor/48x48/apps/
+convert -geometry 48x48 %SOURCE1 %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{name}.png
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -56,9 +60,11 @@ EOF
 
 %post
 %{update_menus}
+%{update_icon_cache} hicolor
 
 %postun
 %{clean_menus}
+%{clean_icon_cache} hicolor
 
 %files
 %defattr(-,root,root)
@@ -66,7 +72,7 @@ EOF
 %{_bindir}/%name
 %{_mandir}/man1/*
 %{_datadir}/applications/*.desktop
-%{_datadir}/pixmaps/*.png
+%{_iconsdir}/hicolor/*/apps/*.png
 
 %clean
 rm -fr $RPM_BUILD_ROOT
