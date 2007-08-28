@@ -47,7 +47,6 @@ convert -geometry 48x48 %SOURCE1 %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{n
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=g3data
 Comment=Data Extraction Tool
 Exec=g3data
