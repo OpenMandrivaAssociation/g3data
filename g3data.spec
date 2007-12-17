@@ -11,7 +11,6 @@ URL:            http://koti.welho.com/jfrantz/software/g3data.html
 Summary:        Graph data extractor
 Source:		http://freshmeat.net/redir/g3data/28160/url_tgz/%{name}-%{version}.tar.bz2
 Source1:	g3data-icon.png
-BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	imlib-devel gtk2-devel pkgconfig
 BuildRequires:	perl-SGMLSpm docbook-utils docbook-dtd41-sgml imagemagick
 
