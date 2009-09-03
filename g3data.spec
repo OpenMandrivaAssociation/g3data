@@ -1,6 +1,6 @@
 %define name 	g3data
 %define version 1.5.1
-%define release %mkrel 4 
+%define release %mkrel 5
 
 Name:           %name
 Version:        %version
