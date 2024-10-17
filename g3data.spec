@@ -7,7 +7,7 @@ Version:        %version
 Release:        %release
 Group:          Graphics
 License:        GPLv2+
-URL:            http://www.frantz.fi/software/g3data.php
+URL:            https://www.frantz.fi/software/g3data.php
 Summary:        Graph data extractor
 Source:		http://www.frantz.fi/software/%{name}-%{version}.tar.gz
 Source1:	g3data-icon.png
